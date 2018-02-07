@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+<group ns="pirov">    
+
+    <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find ecn_bluerov_base)/launch/pirov.rviz" />
+    
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+    <node name="tf_bridge" pkg="ecn_bluerov_base" type="rviz_bridge.py" output="screen" respawn="true">  
+    </node>
+    
+    <node name="gui" pkg="slider_publisher" type="slider_publisher" output="screen" respawn="true">
+        <param name="file" value="$(find ecn_bluerov)/launch/force_angle.yaml"/>
+        <remap from="tilt_command" to="joint_states"/>
+    </node>
+    
+</group>
+</launch>

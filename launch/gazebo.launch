@@ -30,6 +30,7 @@
     <group ns="pirov">
          <!-- spawn in Gazebo with GUI -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder $(find ecn_bluerov)/urdf/pirov.xacro"/>
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
         <node name="spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model pirov -param robot_description -x 3 -y 6.5 -z -10 "/>
         <rosparam file="$(find ecn_bluerov_base)/launch/pirov_thrusters.yaml" command="load"/>
         
