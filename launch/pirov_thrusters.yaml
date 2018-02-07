@@ -4,6 +4,7 @@ controllers:
             state: state
             command: thruster_command
             type: thruster
+            control_type: thruster
         joints:
             state: joint_states
             setpoint: tilt_command

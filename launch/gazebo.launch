@@ -13,6 +13,7 @@
         <arg name="gui" value="false" if="$(arg uwsim)"/>
         <arg name="paused" value="true"/>
         <arg name="world_name" value="$(find freefloating_gazebo)/world/underwater.world"/>
+                <arg name="extra_gazebo_args" value="/pirov/state:=/pirov/ground_truth"/>
     </include>
     
     <!-- add 100 x 100 m turquoise water -->
@@ -29,7 +30,7 @@
     <group ns="pirov">
          <!-- spawn in Gazebo with GUI -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder $(find ecn_bluerov)/urdf/pirov.xacro"/>
-        <node name="spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model pirov -param robot_description -x 3 -y 6.5 -z -10 -R 3.14927 -P 0 -Y 0"/>
+        <node name="spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model pirov -param robot_description -x 3 -y 6.5 -z -10 "/>
         <rosparam file="$(find ecn_bluerov_base)/launch/pirov_thrusters.yaml" command="load"/>
         
         
