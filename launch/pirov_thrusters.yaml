@@ -10,8 +10,8 @@ controllers:
             setpoint: tilt_command
             command: joint_command
     tilt:
-        velocity: {p: 10.0, i: 0., d: 0.0}
-        position: {p: 200, i: 1, d: 20}
+        velocity: {p: 0.0, i: 0., d: 0.0}
+        position: {p: 0, i: 0, d: 00}
             
             
 
