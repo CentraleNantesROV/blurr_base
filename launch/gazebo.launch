@@ -24,17 +24,23 @@
     <group if="$(arg uwsim)">
         <!-- launch uwsim -->
         <node name="uwsim" pkg="uwsim" type="uwsim" 
-            args="$(arg disableShaders) --dataPath $(find ecn_bluerov_base) --dataPath $(find ecn_bluerov_base) --configfile scenes/pirov.xml" respawn="true"/>
+            args="$(arg disableShaders) --dataPath $(find ecn_bluerov_base)
+                                        --dataPath $(find freefloating_gazebo_demo)
+                                        --dataPath $(find ecn_bluerov)
+                                        --dataPath $(find bluerov_ffg)
+                                        --configfile scenes/pirov.xml" respawn="true"/>
     </group>     
     
     <group ns="pirov">
          <!-- spawn in Gazebo with GUI -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder $(find ecn_bluerov)/urdf/pirov.xacro"/>
-        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+            <remap from="joint_states" to="tilt_command"/>
+        </node>
+        
         <node name="spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model pirov -param robot_description -x 3 -y 6.5 -z -10 "/>
         <rosparam file="$(find ecn_bluerov_base)/launch/pirov_thrusters.yaml" command="load"/>
-        
-        
+                
         <node name="pid_control" pkg="freefloating_gazebo" type="pid_control" output="screen" respawn="true">
             <param name="joint_control" value="position"/>
         </node>

@@ -62,6 +62,9 @@
   <vehicle>
     <name>pirov</name>
     <file>urdf/pirov_uwsim.urdf</file>
+    <jointValues>
+      <joint> 0 </joint>
+    </jointValues>
      <position>
       <x> 3</x>
       <y> 6.5 </y>
@@ -91,9 +94,14 @@
 
   <rosInterfaces>      
     <ROSOdomToPAT>
-      <topic> /pirov/state </topic>
+      <topic> /pirov/ground_truth </topic>
       <vehicleName> pirov </vehicleName>
     </ROSOdomToPAT>
+    
+    <ROSJointStateToArm> 
+        <topic>/pirov/joint_states</topic>
+        <vehicleName>tilt</vehicleName>
+    </ROSJointStateToArm>
    
   </rosInterfaces>
 </UWSimScene>
