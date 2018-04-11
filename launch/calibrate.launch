@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="republish" pkg="image_transport" type="republish" args="in:=/pirov/raspicam/image/ compressed out:=image"/>
+    <node name="calibrator" pkg="camera_calibration" type="cameracalibrator.py" output="screen" args="-s 8x6 -q 0.025"/>
+
+</launch>
+

@@ -8,9 +8,5 @@
     <node name="tf_bridge" pkg="ecn_bluerov_base" type="rviz_bridge.py" output="screen" respawn="true">  
     </node>
     
-    <node name="gui" pkg="slider_publisher" type="slider_publisher" output="screen" respawn="true">
-        <param name="file" value="$(find ecn_bluerov)/launch/force_angle.yaml"/>
-    </node>
-    
 </group>
 </launch>

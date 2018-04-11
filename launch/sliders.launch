@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="pirov">
+    <node name="gui" pkg="slider_publisher" type="slider_publisher" output="screen" respawn="true">
+        <param name="file" value="$(find ecn_bluerov_base)/launch/force_angle.yaml"/>
+    </node>
+</group>
+</launch>
+

@@ -13,13 +13,13 @@
         <arg name="gui" value="false" if="$(arg uwsim)"/>
         <arg name="paused" value="true"/>
         <arg name="world_name" value="$(find freefloating_gazebo)/world/underwater.world"/>
-        <!--<arg name="extra_gazebo_args" value="/pirov/state:=/pirov/ground_truth"/>-->
+        <arg name="extra_gazebo_args" value="/pirov/state:=/pirov/ground_truth"/>
     </include>
     
     <!-- add 100 x 100 m turquoise water -->
-<!--    <node name="surface" pkg="freefloating_gazebo" type="surface.py"
+    <node name="surface" pkg="freefloating_gazebo" type="surface.py"
           args="-x 100 -y 100 -g 0.2 -b 1 -a 0.2"
-          />-->
+          />
     
     <group if="$(arg uwsim)">
         <!-- launch uwsim -->
@@ -39,12 +39,11 @@
         </node>
         
         <node name="spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model pirov -param robot_description -x 3 -y 6.5 -z -10 "/>
-        <rosparam file="$(find ecn_bluerov_base)/launch/pirov_thrusters.yaml" command="load"/>
-                
+        
+        <rosparam file="$(find ecn_bluerov_control)/config/pirov_sim.yaml" command="load"/>                
         <node name="pid_control" pkg="freefloating_gazebo" type="pid_control" output="screen" respawn="true">
             <param name="joint_control" value="position"/>
-        </node>
-        
+        </node>        
     </group>
         
     <!-- spawn terrain -->
