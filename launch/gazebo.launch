@@ -2,7 +2,7 @@
 <launch>
    <arg name="gui" default="true"/>
    <arg name="uwsim" default="false"/>
-  <arg name="shaders" default="true"/>
+  <arg name="shaders" default="false"/>
   <!-- virtual arg for uwsim shaders -->
   <arg name="disableShaders" default="" if="$(arg shaders)"/>  
   <arg name="disableShaders" default="--disableShaders" unless="$(arg shaders)"/> 
@@ -13,7 +13,7 @@
         <arg name="gui" value="false" if="$(arg uwsim)"/>
         <arg name="paused" value="true"/>
         <arg name="world_name" value="$(find freefloating_gazebo)/world/underwater.world"/>
-        <arg name="extra_gazebo_args" value="/pirov/state:=/pirov/ground_truth"/>
+        <!--<arg name="extra_gazebo_args" value="/pirov/state:=/pirov/ground_truth"/>-->
     </include>
     
     <!-- add 100 x 100 m turquoise water -->
@@ -40,9 +40,10 @@
         
         <node name="spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model pirov -param robot_description -x 3 -y 6.5 -z -10 "/>
         
-        <rosparam file="$(find ecn_bluerov_control)/config/pirov_sim.yaml" command="load"/>                
+        <rosparam file="$(find ecn_bluerov_base)/config/pirov_sim.yaml" command="load"/>                
         <node name="pid_control" pkg="freefloating_gazebo" type="pid_control" output="screen" respawn="true">
             <param name="joint_control" value="position"/>
+            <param name="body_control" value="depth"/>
         </node>        
     </group>
         

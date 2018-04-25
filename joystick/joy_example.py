@@ -81,7 +81,6 @@ while not rospy.is_shutdown():
     if  buttons[1] or buttons[0] or buttons[2]:
         # button 5 to line width
         w = 2 + (1-axes[5])*4
-        print w
         pen(buttons[1]*255,buttons[0]*255,buttons[2]*255,w, True)
     else:
         pen(0,0,0,2, False)

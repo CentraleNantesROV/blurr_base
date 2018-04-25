@@ -1,0 +1,26 @@
+body_wrench_setpoint:
+    type: geometry_msgs/Wrench
+    x: 
+        min: -40
+        max: 40
+        to: force.x
+    y: 
+        min: -30
+        max: 30
+        to: force.y
+    z: 
+        min: -30
+        max: 30
+        to: force.z
+    yaw: 
+        min: -30
+        max: 30
+        to: torque.z
+
+tilt_command:
+    type: sensor_msgs/JointState
+    name[0]: 'tilt'
+    tilt:
+        min: -0.785
+        max: 0.785
+        to: position[0]
