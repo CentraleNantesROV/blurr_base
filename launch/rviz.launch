@@ -3,6 +3,7 @@
 
 <group ns="pirov">    
 
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find ecn_bluerov)/urdf/pirov_full.xacro"/>
     <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find ecn_bluerov_base)/launch/pirov.rviz" />
     
     <node name="tf_bridge" pkg="ecn_bluerov_base" type="rviz_bridge.py" output="screen" respawn="true">  

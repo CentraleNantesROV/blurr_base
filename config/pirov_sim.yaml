@@ -3,7 +3,7 @@ controllers:
         body:
             state: state
             command: thruster_command
-            type: wrench
+            type: thruster
             dynamic_reconfigure: True            
             pid: True
         joints:
