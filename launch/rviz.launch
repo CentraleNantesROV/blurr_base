@@ -3,8 +3,14 @@
 
 <group ns="pirov">    
 
-    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find ecn_bluerov)/urdf/pirov_full.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find ecn_bluerov)/urdf/pirov_full.xacro"/>
     <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find ecn_bluerov_base)/launch/pirov.rviz" />
+    
+    <group ns="static_tf">
+    <node pkg="tf" type="static_transform_publisher" name="pressure_br" args="0.165 0.11 -0.1 0 0 0 1 base_link pressure_link 1000" />
+    <node pkg="tf" type="static_transform_publisher" name="leak_br" args="0.165 0 -0.1 0 0 0 1 base_link leak_link 1000" />
+    <node pkg="tf" type="static_transform_publisher" name="temperature_br" args="0.165 -0.11 -0.1 0 0 0 1 base_link temperature_link 1000" />
+    </group>
     
     <node name="tf_bridge" pkg="ecn_bluerov_base" type="rviz_bridge.py" output="screen" respawn="true">  
     </node>

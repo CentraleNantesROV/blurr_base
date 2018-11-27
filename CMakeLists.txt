@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(ecn_bluerov_base)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+add_compile_options(-std=c++1z)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   roscpp
   sensor_msgs
+  freefloating_gazebo
 )
 
 catkin_package(
@@ -27,3 +28,5 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_executable(joy_control src/joy_control.cpp)
+target_link_libraries(joy_control   ${catkin_LIBRARIES})

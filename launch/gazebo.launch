@@ -33,9 +33,9 @@
     
     <group ns="pirov">
          <!-- spawn in Gazebo with GUI -->
-        <param name="robot_description" command="$(find xacro)/xacro --inorder $(find ecn_bluerov)/urdf/pirov_full.xacro"/>
+        <param name="robot_description" command="$(find xacro)/xacro $(find ecn_bluerov)/urdf/pirov_full.xacro"/>
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-            <remap from="joint_states" to="tilt_command"/>
+            <remap from="joint_states" to="joint_command"/>
         </node>
         
         <node name="spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model pirov -param robot_description -x 3 -y 6.5 -z -10 "/>

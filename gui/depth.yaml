@@ -21,7 +21,7 @@ body_position_setpoint:
         to: pose.position.z
     pose.orientation.x: 0
     pose.orientation.y: 0
-tilt_command:
+joint_command:
     type: sensor_msgs/JointState
     name[0]: 'tilt'
     tilt:

@@ -5,9 +5,6 @@ controllers:
         joints:
             dynamic_reconfigure: True
             cascaded_position: False
-    tilt:
-        velocity: {p: 0.0, i: 0., d: 0.0}
-        position: {p: 10, i: 1, d: 0}
     x:
         velocity: {p: 50, i: 10, d: 0.1}
         position: {p: 100, i: 5, d: 10}
