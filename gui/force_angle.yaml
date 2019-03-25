@@ -30,10 +30,16 @@ thruster_command:
     name[3]: 'thr4'
     name[4]: 'thr5'
     name[5]: 'thr6'
-tilt_command:
+joint_setpoint:
     type: sensor_msgs/JointState
     name[0]: 'tilt'
     tilt:
         min: -0.785
         max: 0.785
         to: position[0]
+light:
+    type: std_msgs/Float32
+    intensity:
+        min: 0
+        max: 1
+        to: data
