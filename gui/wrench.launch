@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <launch>
-    <group ns="pirov">
+    <group ns="blurr">
     <node name="gui" pkg="slider_publisher" type="slider_publisher" output="screen" respawn="true">
-        <param name="file" value="$(find ecn_bluerov_base)/gui/wrench.yaml"/>
+        <param name="file" value="$(find blurr_base)/gui/wrench.yaml"/>
     </node>
 </group>
 </launch>
-

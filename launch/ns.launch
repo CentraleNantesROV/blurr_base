@@ -1,25 +1,11 @@
 <?xml version="1.0"?>
 <launch>
-   <arg name="gui" default="true"/>
-   <arg name="uwsim" default="false"/>
-  <arg name="shaders" default="false"/>
-  <!-- virtual arg for uwsim shaders -->
-  <arg name="disableShaders" default="" if="$(arg shaders)"/>  
-  <arg name="disableShaders" default="--disableShaders" unless="$(arg shaders)"/> 
-  
- 
     
-    <group ns="pirov">
-         <!-- spawn in Gazebo with GUI -->
-        <param name="robot_description" command="$(find xacro)/xacro $(find ecn_bluerov)/urdf/pirov_full.xacro"/>
-        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-            <remap from="joint_states" to="joint_command"/>
-        </node>
-        
-        <rosparam file="$(find ecn_bluerov_base)/config/pirov_sim.yaml" command="load"/>                
-        <!--<node name="pid_control" pkg="freefloating_gazebo" type="pid_control" output="screen" respawn="true">
-            <param name="joint_control" value="position"/>
-            <param name="body_control" value="depth"/>
-        </node>-->        
+    <arg name="ns" default="blurr"/>
+    <arg name="pkg" default="blurr"/>
+    <arg name="model" default="urdf/blurr.xacro"/>
+    
+    <group ns="$(arg ns)">
+        <param name="robot_description" command="$(find xacro)/xacro $(find bluerov_ffg)/$(arg model)"/>
     </group>
 </launch>

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <node name="image_view" pkg="image_view" type="image_view" output="screen" args="image:=/pirov/raspicam/image">
+    <node name="image_view" pkg="image_view" type="image_view" output="screen" args="image:=/blurr/raspicam/image">
         <param name="image_transport" value="compressed"/>
     </node>
 </launch>
-

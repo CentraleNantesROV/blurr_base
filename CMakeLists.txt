@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ecn_bluerov_base)
+project(blurr_base)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++1z)
@@ -16,7 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES ecn_bluerov_base
+#  LIBRARIES blurr_base
 #  CATKIN_DEPENDS nav_msgs roscpp sensor_msgs
 #  DEPENDS system_lib
 )

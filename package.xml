@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ecn_bluerov_base</name>
+  <name>blurr_base</name>
   <version>0.1.0</version>
-  <description>The ecn_bluerov_base package</description>
+  <description>The blurr_base package</description>
   
   <maintainer email="olivier.kermorgant@ec-nantes.fr">Olivier Kermorgant</maintainer>
 

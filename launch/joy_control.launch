@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 		    
-    <arg name="ns" default="pirov"/>
+    <arg name="ns" default="blurr"/>
         
 		<node type="joy_node" name="bluerov_joy"  pkg="joy" respawn="true">
 			<param name="dev" type="string" value="/dev/input/js1" />
 			<param name="deadzone" value="0.12" />
 		</node>
 		
-		<node pkg = "ecn_bluerov_base" type = "joy_control" name = "joystick_cmd" respawn="true" output="screen" ns="$(arg ns)"/>
+		<node pkg = "blurr_base" type = "joy_control" name = "joystick_cmd" respawn="true" output="screen" ns="$(arg ns)"/>
         
 </launch>
