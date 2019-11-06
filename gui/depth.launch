@@ -1,8 +1,15 @@
 <?xml version="1.0"?>
 <launch>
+       
     <group ns="blurr">
+        <node name="pid_control" pkg="freefloating_gazebo" type="pid_control" output="screen" respawn="true">
+             <param name="body_control" value="depth"/>
+        </node>
+        
+        <!-- Load gui -->
     <node name="gui" pkg="slider_publisher" type="slider_publisher" output="screen" respawn="true">
         <param name="file" value="$(find blurr_base)/gui/depth.yaml"/>
     </node>
-</group>
+    </group>
+   
 </launch>

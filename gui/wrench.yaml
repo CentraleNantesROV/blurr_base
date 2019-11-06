@@ -17,7 +17,7 @@ body_wrench_setpoint:
         max: 30
         to: torque.z
 
-joint_command:
+joint_setpoint:
     type: sensor_msgs/JointState
     name[0]: 'tilt'
     tilt:

@@ -154,7 +154,7 @@ void update(double &x, double axis, double incr)
 }
 void update(double &x, double axis, double incr, double xmin, double xmax)
 {
-  x = std::min(xmax, std::max(x + axis * incr, xmin));
+  x = clamp(x + axis * incr, xmin, xmax);
 }
 void quaternionFromYaw(double y, geometry_msgs::Quaternion &q)
 {

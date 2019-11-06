@@ -17,7 +17,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Temperature
+    SyncSource: ""
   - Class: rviz/Displays
     Help Height: 84
     Name: Displays
@@ -25,15 +25,14 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1
-        - /RobotModel1/Status1
         - /TF1
         - /TF1/Frames1
-        - /Temperature1
-        - /RelativeHumidity1
       Splitter Ratio: 0.5
     Tree Height: 676
 Preferences:
   PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
 Visualization Manager:
   Class: ""
   Displays:
@@ -108,7 +107,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
       Name: RobotModel
-      Robot Description: pirov/robot_description
+      Robot Description: /blurr/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -122,7 +121,7 @@ Visualization Manager:
       Hide Small Values: true
       History Length: 1
       Name: WrenchStamped
-      Topic: /pirov/thr1_wrench
+      Topic: /blurr/thr1_wrench
       Torque Arrow Scale: 2
       Torque Color: 204; 204; 51
       Unreliable: false
@@ -136,7 +135,7 @@ Visualization Manager:
       Hide Small Values: true
       History Length: 1
       Name: WrenchStamped
-      Topic: /pirov/thr2_wrench
+      Topic: /blurr/thr2_wrench
       Torque Arrow Scale: 2
       Torque Color: 204; 204; 51
       Unreliable: false
@@ -150,7 +149,7 @@ Visualization Manager:
       Hide Small Values: true
       History Length: 1
       Name: WrenchStamped
-      Topic: /pirov/thr3_wrench
+      Topic: /blurr/thr3_wrench
       Torque Arrow Scale: 2
       Torque Color: 204; 204; 51
       Unreliable: false
@@ -164,7 +163,7 @@ Visualization Manager:
       Hide Small Values: true
       History Length: 1
       Name: WrenchStamped
-      Topic: /pirov/thr4_wrench
+      Topic: /blurr/thr4_wrench
       Torque Arrow Scale: 2
       Torque Color: 204; 204; 51
       Unreliable: false
@@ -178,7 +177,7 @@ Visualization Manager:
       Hide Small Values: true
       History Length: 1
       Name: WrenchStamped
-      Topic: /pirov/thr5_wrench
+      Topic: /blurr/thr5_wrench
       Torque Arrow Scale: 2
       Torque Color: 204; 204; 51
       Unreliable: false
@@ -192,7 +191,7 @@ Visualization Manager:
       Hide Small Values: true
       History Length: 1
       Name: WrenchStamped
-      Topic: /pirov/thr6_wrench
+      Topic: /blurr/thr6_wrench
       Torque Arrow Scale: 2
       Torque Color: 204; 204; 51
       Unreliable: false
@@ -236,7 +235,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.029999999329447746
       Style: Spheres
-      Topic: /pirov/temperature
+      Topic: /blurr/temperature
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: false
@@ -266,7 +265,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.029999999329447746
       Style: Spheres
-      Topic: /pirov/pressure
+      Topic: /blurr/pressure
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: false
@@ -296,7 +295,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.029999999329447746
       Style: Spheres
-      Topic: /pirov/leak
+      Topic: /blurr/leak
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: false
@@ -316,7 +315,10 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
       Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
     - Class: rviz/SetGoal
       Topic: /move_base_simple/goal
     - Class: rviz/PublishPoint
@@ -326,25 +328,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.43343350291252136
+      Distance: 1.150765299797058
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0013604940613731742
-        Y: -0.03689344972372055
-        Z: -0.13089102506637573
+        X: -0.0361754409968853
+        Y: -0.01586082950234413
+        Z: -0.07829297333955765
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.14479798078536987
+      Pitch: 0.2047983705997467
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.018577709794044495
+      Yaw: 5.6017608642578125
     Saved: ~
 Window Geometry:
   "&Displays":
